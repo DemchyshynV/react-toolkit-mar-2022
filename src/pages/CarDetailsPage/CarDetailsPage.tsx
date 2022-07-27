@@ -1,5 +1,6 @@
 import {FC, useEffect, useState} from 'react';
-import {useLocation, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
+
 import {useAppLocation} from '../../hooks';
 import {ICar} from '../../interfaces';
 import {carService} from '../../services';
@@ -15,7 +16,7 @@ const CarDetailsPage: FC = () => {
         } else {
             carService.getById(+id!).then(({data}) => setCar(data))
         }
-    }, [id])
+    }, [id, state])
 
     return (
         <div>

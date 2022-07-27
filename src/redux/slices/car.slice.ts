@@ -1,7 +1,8 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+import {AxiosError} from 'axios';
+
 import {ICar} from '../../interfaces';
 import {carService} from '../../services';
-import {AxiosError} from 'axios';
 
 interface IState {
     cars: ICar[];
